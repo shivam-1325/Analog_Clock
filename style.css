@@ -1,0 +1,153 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: black;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.fill{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.clock{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* We'll scale this with JS */
+  transform-origin: center center;
+  width: 0;
+  height: 0;
+  opacity: 1;
+}
+
+.centre {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+
+/* helpers */
+.expand{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.anchor{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+
+.element{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.round{
+  border-radius: 50%;
+}
+
+/* center circles */
+.circle-1{
+  background-color: white;
+  width: 12px;
+  height: 12px;
+}
+
+.circle-2{
+  background-color: #fa9f22;
+  width: 4px;
+  height: 4px;
+}
+
+.circle-3{
+  background-color: black;
+  width: 4px;
+  height: 4px;
+}
+
+/* anchor default rotation adjustments (these are initial values but animation will override) */
+.second{
+  /* nothing required, animation sets transform */
+}
+.minute{ }
+.hour{ }
+
+/* hands */
+.second-hand{
+  background-color: #fa9f22;
+  width: 2px;
+  height: 64px;
+  transform: translate(-50%,-50%) translateY(-64px);
+  transform-origin: 50% 100%;
+  border-radius: 1px;
+}
+
+.thin-hand{
+  background-color: white;
+  width: 4px;
+  height: 50px;
+  transform: translate(-50%,-100%);
+  transform-origin: 50% 100%;
+  border-radius: 2px;
+}
+
+.fat-hand{
+  background-color: white;
+  width: 10px;
+  height: 57px;
+  transform: translate(-50%,-100%) translateY(-18px);
+  transform-origin: 50% 100%;
+  border-radius: 3px;
+}
+
+.minute-hand{
+  height: 112px;
+}
+
+/* numbers & minute texts */
+.hour-text{
+  position: absolute;
+  font: 40px Helvetica, Arial, sans-serif;
+  color: white;
+  transform: translate(-50%,-50%);
+}
+
+.hour-10{
+  padding-left: 0.4ex;
+}
+.hour-11{
+  padding-left: 0.25ex;
+}
+
+.minute-text{
+  position: absolute;
+  font: 20px Helvetica, Arial, sans-serif;
+  color: white;
+  transform: translate(-50%,-50%);
+}
+
+/* minute tick lines */
+.minute-line{
+  background-color: white;
+  width: 1px;
+  height: 9px;
+  transform: translate(-50%,-100%) translateY(-131px);
+  opacity: .34;
+}
